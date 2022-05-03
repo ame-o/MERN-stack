@@ -38,8 +38,13 @@ const[firstPlace,  , thirdPlace] = trips;   // just a copy not reassigning
 //-------------------spread/rest-------------------------------
 const postCopy = {...post};//makes a copy
 console.log(postCopy);
+const postUpdate = {...post, likes:5};  //makes a copy and replaces value
+const {title:newTitle} = post;  
+//instatiate const newTitle
+//find value of "title" from "post"
+//assign that value to "newTitle"
 
-const arrayCopy = [...array];   //makes a copy
+const arrayCopy = ["new number",...array];   //makes a copy and adds to front of the list
 arrayCopy.pop();    //can use array methods to make changes
 
 //-------------------arrow function-------------------------------
@@ -50,6 +55,21 @@ function printHello(){
 
 const printHello2 = ()=> {  //use fat arrow is like "equals" / declare function
     console.log("Hello2");
-
-// short-handed arrow function
 }
+// short-handed arrow function
+
+//--------------------------ternary operator----------------------------------
+rating = 8
+if (rating >7){
+    console.log("Good Movie")
+}else{
+    console.log("Bad Movie")
+}
+    //change to:
+    (rating>7)?
+    console.log("no"):
+    console.log("yes");
+
+    //also can be: 
+rating>7&&console.log("good")
+rating<=7&&console.log("bad")
