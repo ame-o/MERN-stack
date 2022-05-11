@@ -15,6 +15,7 @@ const UserForm = (props) => {
         const newUser = { firstName, lastName, email, password, confirm };
         console.log("Welcome", newUser);
         setHasBeenSubmitted( true );
+        props.newUser(newUser)
     };
     
     const formMessage = () => {
@@ -31,7 +32,7 @@ const UserForm = (props) => {
         <div>
             <label>First Name: </label> 
             <input type="text" onChange={ (e) => setFirstName(e.target.value) } />
-            {
+            { 
                 firstName && firstName.length < 2?
                 <span style={{color:"red"}}> First Name must at least be 2 characters long</span>:""
             }

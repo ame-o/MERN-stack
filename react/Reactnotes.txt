@@ -1,0 +1,8 @@
+React - front end library used for SPA
+SPA - single page application
+Babel is a transpiler(source to source compiler) that will turn JSX into JavaScript that browsers can understand
+create-react-app - opinionated starter kit
+-automatically includes latest repos
+code to start React program:
+
+npx create-react-app your-project-name-here
