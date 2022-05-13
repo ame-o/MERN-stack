@@ -1,10 +1,6 @@
 module.exports = (app) => {
 
-const users = [
-    {name: "person1"},
-    {name: "person2"}
 
-]
 //function with two params: request and response (ORDER MATTERS!)
 app.get("/api",(req,res) =>{
     //req: what we receive

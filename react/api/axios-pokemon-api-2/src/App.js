@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 function App() {
-  const [pokemon,setPokemon] =useState([]);
+  const [pokemon,setPokemon] = useState([]);
 
 
   const fetchAPI = () => {
