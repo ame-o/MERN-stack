@@ -20,18 +20,18 @@ const SWForm = () => {
     }
 
     return (
-        <div>
+        <div className='box'>
             <form onSubmit={handleSubmit}>
                 <p>
                 Search for:
-                <select name="category" value={category} onChange={(e) => setCategory(e.target.value)} >
+                <select className='select' name="category" value={category} onChange={(e) => setCategory(e.target.value)} >
                     <option>Choose a Category </option>
                     <option value="people">People</option>
                     <option value="planets">Planets</option>
                 </select>
                 ID:
-                <input onChange={(e) => setId(e.target.value)} type="text" name="id" value={id} />
-                <button>Search</button>
+                <input className='is-link' onChange={(e) => setId(e.target.value)} type="text" name="id" value={id} />
+                <button className='button is-link'>Search</button>
                 </p>
             </form>
         </div>

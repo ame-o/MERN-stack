@@ -16,7 +16,8 @@ function App() {
     .catch(err => console.log(err))
     }
     return (
-      <div className="App">
+      <div>
+        <div className="Box"></div>
       <h1> Pokemon Names!!! </h1>
       <button onClick={fetchAPI}> FETCH POKEMON </button>
       <hr/>

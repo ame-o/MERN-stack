@@ -19,7 +19,7 @@ const Planets = () => {
     <div>
         {
             planets?
-            <div>
+            <div className='container is-widescreen'>
                 <h2>Planet: {planets.name} </h2>
                 <h4>Climate: {planets.climate} </h4>
                 <h4>Terrain: {planets.terrain} </h4>
