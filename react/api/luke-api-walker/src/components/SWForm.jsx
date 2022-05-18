@@ -25,7 +25,7 @@ const SWForm = () => {
                 <p>
                 Search for:
                 <select className='select' name="category" value={category} onChange={(e) => setCategory(e.target.value)} >
-                    <option>Choose a Category </option>
+                    <option hidden>Choose a Category </option>
                     <option value="people">People</option>
                     <option value="planets">Planets</option>
                 </select>

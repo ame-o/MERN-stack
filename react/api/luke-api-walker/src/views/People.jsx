@@ -42,13 +42,7 @@ const People = () => {
                 people?
             <div className='container is-widescreen p'>
                 <h2 className='title'> {people.name}</h2>
-                <h4 className='subtitle'> Species: 
-                    {
-                        species?
-                        <span> {species.name}</span>
-                        : 
-                        <span> Classified </span>
-                    }
+                <h4 className='subtitle'> Species: {species.name}
                 </h4>
                 <h4 className='subtitle'> Homeworld: {planet.name}</h4>
                 <h4 className='subtitle'> Birth Year: {people.birth_year}</h4>
