@@ -2,10 +2,10 @@
 const {Product} = require("../models/products.model")
 
 //test
-module.exports.testAPI = (req,res)=>{
-   // res.status(400).json("Wrong message")
-   res.json("Backend message")
-}
+// module.exports.testAPI = (req,res)=>{
+//    // res.status(400).json("Wrong message")
+//    res.json("Backend message")
+// }
 
 // Get all
 module.exports.allProducts = (req, res) =>{
@@ -14,6 +14,13 @@ module.exports.allProducts = (req, res) =>{
         .catch(err=> res.json(err))
 }
 
+// create
+module.exports.createProduct = (req, res) =>{
+    const newProduct = req.body
+    Product.create(newProduct)
+        .then(newProduct=> res.json(newProduct))
+        .catch(err=>res.json(err))
+}
 
 // // Get one
 // module.exports.oneProduct = (req, res) =>{
@@ -24,13 +31,6 @@ module.exports.allProducts = (req, res) =>{
 // }
 
 
-// create
-module.exports.createProduct = (req, res) =>{
-    const newProduct = req.body
-    Product.create(newProduct)
-        .then(newProduct=> res.json(newProduct))
-        .catch(err=>res.json(err))
-}
 
 // // update --  getOne + create
 // module.exports.updateProduct = (req, res) =>{

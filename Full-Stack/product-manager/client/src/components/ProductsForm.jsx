@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, {useEffect,useState} from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ProductsForm = (props) => {
@@ -12,7 +12,7 @@ const ProductsForm = (props) => {
 const handleSubmit = (e) => {
   e.preventDefault()
   axios.post(`http://localhost:8000/api/products`,{title,price,description})
-    .then(response=>(`/products`))
+    .then(response=>navigate(`/products`))
     .catch(err=>console.log(err.response.data))
 }
 
