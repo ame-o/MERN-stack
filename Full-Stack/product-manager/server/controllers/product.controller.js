@@ -24,13 +24,13 @@ module.exports.allProducts = (req, res) =>{
 // }
 
 
-// // create
-// module.exports.createProduct = (req, res) =>{
-//     const newJoke = req.body
-//     Product.create(newProduct)
-//         .then(product=> res.json(product))
-//         .catch(err=>res.json(err))
-// }
+// create
+module.exports.createProduct = (req, res) =>{
+    const newProduct = req.body
+    Product.create(newProduct)
+        .then(newProduct=> res.json(newProduct))
+        .catch(err=>res.json(err))
+}
 
 // // update --  getOne + create
 // module.exports.updateProduct = (req, res) =>{
