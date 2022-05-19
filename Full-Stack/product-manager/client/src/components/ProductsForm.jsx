@@ -4,18 +4,31 @@ import { useNavigate } from 'react-router-dom';
 
 const ProductsForm = (props) => {
     const [title, setTitle] = useState("")
-    const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
-    // const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState([])
     const navigate = useNavigate()
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  axios.post(`http://localhost:8000/api/products`,{title,price,description})
+  clearForm()
+  axios.post(`http://localhost:8000/api/products`,{title, price, description})
     .then(response=>navigate(`/products`))
-    .catch(err=>console.log(err.response.data))
+    .catch(err=>{
+      const errArr =[]
+      const errResData = err.response.data.errors
+      console.log(errResData)
+      for(const key in errResData){
+          errArr.push(errResData[key]["message"])
+      }
+      setErrors(errArr)
+  })
 }
-
+const clearForm = () => {
+  setTitle("")
+  setPrice("")
+  setDescription("")
+}
   
   return(
     <fieldset>
@@ -31,13 +44,17 @@ const handleSubmit = (e) => {
   </div>
   <div>
 <label>Description</label>
-<input type="textarea"
- name="description" value={description} onChange ={e=>setDescription(e.target.value)}/>
+<input name="description" value={description} onChange ={e=>setDescription(e.target.value)}/>
  </div>
  <div>
    <button type='submit'>Create New Product</button>
   </div>
 </form>
+  {
+    errors.map((err, i)=>(
+      <p key={i} style={{color: "red"}}> {err} </p>
+    ))
+  }
     </fieldset>
   )
 
