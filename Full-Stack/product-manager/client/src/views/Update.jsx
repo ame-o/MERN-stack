@@ -23,7 +23,7 @@ const Update = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:8000/api/products/${id}`,{title, price, description})
+        axios.put(`http://localhost:8000/api/products/${id}`,{title, price, description})
             .then(response=>navigate(`/products`))
             .catch(err=>{
             const errArr =[]

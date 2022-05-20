@@ -11,11 +11,11 @@ const ProductsForm = (props) => {
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  clearForm()
   axios.post(`http://localhost:8000/api/products`,{title, price, description})
-    .then(response=>{
-      navigate(`/products`)
-      props.reloadList()
+  .then(response=>{
+    // navigate(`/products`)
+    props.reloadList()
+    clearForm()
     })
     .catch(err=>{
       const errArr =[]

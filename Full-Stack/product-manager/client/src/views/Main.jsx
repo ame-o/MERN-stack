@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductForm from '../components/ProductsForm'
 import DisplayAll from '../components/DisplayAll'
 
@@ -19,7 +19,7 @@ const Main = () => {
   return (
     <div>
         <ProductForm reloadList ={reload} />
-        <DisplayAll products={products} />
+        <DisplayAll products={products} reloadList = {reload}/>
     </div>
   )
 }
